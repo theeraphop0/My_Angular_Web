@@ -138,6 +138,7 @@ textarea:focus {
     right: 14px;
     bottom: 0;
     background-color: #ffffff;
+    border-color: rgb(107, 105, 105);
     transition: .4s;
     border-radius: 34px;
     border-style: solid;
