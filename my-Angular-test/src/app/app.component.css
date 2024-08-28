@@ -1,0 +1,75 @@
+.main {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    height: 80vh;
+}
+
+h5 {
+    color: rgb(2, 2, 175);
+    font-family: 'Kanit', sans-serif;
+}
+
+.h5_table {
+    margin-left:50px ;
+}
+
+.container {
+    margin: 10px;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+button {
+    margin-top: 55px;
+    padding: 8px;
+    padding-inline: 15px;
+    border-radius: 6px;
+    border: none;
+    background-color: rgb(32, 179, 130); /* สีพื้นหลังของปุ่ม */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-size:large;
+    font-family: 'Kanit', sans-serif
+}
+
+button:hover {
+    background-color: rgb(17, 155, 109); /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+    transform: scale(1.05); /* ขยายขนาดปุ่มเล็กน้อย */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อ hover */
+}
+
+button:active {
+    animation: bounce 1.3s; /* เรียกใช้ animation เมื่อกด */
+    transform: scale(0.95);
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1); /* ขนาดปกติ */
+    }
+    50% {
+        transform: scale(1); /* ขนาดเล็กลงเล็กน้อย */
+    }
+    100% {
+        transform: scale(2); /* ขนาดกลับไปที่ปกติ */
+    }
+}
+
+button i {
+    margin-right: 5px;
+    transition: color 0.3s ease; /* การเคลื่อนไหวของสี icon */
+}
+
+button:hover i {
+    color: #ffffff; /* เปลี่ยนสีของ icon เมื่อ hover */
+}
+
+
+.center h3 {
+    margin-left: 50px;
+}

@@ -1,0 +1,54 @@
+<div class="center">
+    <table>
+        <thead>
+            <tr>
+                <th width="50px"></th>
+                <th width="50px">ลำดับ</th>
+                <th width="auto">ชื่อเรื่อง</th>
+                <th width="160px">วันที่อัปเดต</th>
+                <th width="160px">จัดการ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let news of displayedNews; let i = index">
+                <td>
+                    <label class="switch">
+                        <input type="checkbox" [checked]="news.Status === 1" (change)="handleStatusChange(news)" disabled>
+                        <span class="slider"></span>
+                    </label>
+                </td>
+                <td style="text-align: center;">{{news.NewsId}}</td>
+                <td>{{news.NameNews}}</td>
+                <td>{{news.UpdatedDate | date:'dd/MM/yyyy'}}</td>
+                <td>
+                    <button *ngIf="news.ButtonView === 1" class="icon-button view-button" (click)="openModal(news)">
+                        <i class="far fa-file-alt"></i>
+                    </button>
+                    <button *ngIf="news.ButtonEdit === 1" class="icon-button edit-button">
+                        <i class="far fa-edit"></i>
+                    </button>
+                    <button *ngIf="news.ButtonDelete === 1" class="icon-button delete-button">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="pagination">
+    <button (click)="goToFirstPage()" [disabled]="currentPage === 1">«</button>
+    <button (click)="prevPage()" [disabled]="currentPage === 1">‹</button>
+    <ng-container *ngFor="let page of getPageRange()">
+        <button (click)="goToPage(page)" [ngClass]="{'current-page': page === currentPage}">
+            {{page}}
+        </button>
+    </ng-container>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">›</button>
+    <button (click)="goToLastPage()" [disabled]="currentPage === totalPages">»</button>
+</div>
+<app-modal 
+  [isOpen]="isModalOpen" 
+  [news]="selectedNews" 
+  (close)="closeModal()"
+  (statusChange)="handleStatusChange($event)">
+</app-modal>

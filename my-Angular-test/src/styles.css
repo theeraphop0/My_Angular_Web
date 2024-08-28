@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 40px;
+    padding: 50px;
+    font-family: 'Kanit', sans-serif !important;
+
+}
+html, body { height: 100%; }
+body { margin: 0;}

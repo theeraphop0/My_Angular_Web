@@ -1,0 +1,215 @@
+.required {
+    color: red;
+    margin-left: 3px;
+}
+
+.form-group {
+    margin-left: 15px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* พื้นหลังสีดำโปร่งแสง */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* ค่า z-index สูงๆ */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+    z-index: 1001;
+}
+
+/* สไตล์สำหรับส่วนหัวของ modal */
+.modal-header {
+    background-color: #000080;
+    color: white;
+    padding: 10px;
+    margin: -20px -20px 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    & a {
+        margin: 15px;
+        font-weight: 100;
+        font-size: medium;
+    }
+}
+
+label {
+    color: #000080;
+}
+
+input[type="text"] {
+    margin: 16px;
+    padding: 5px;
+    padding-left: 16px;
+    border: 1px solid #c2c2c2;
+    width: 87%;
+    border-radius: 6px;
+    background-color: rgb(235, 235, 235);
+    transition: box-shadow 0.3s ease;
+    color: rgb(88, 88, 88);
+    font-family: 'Kanit', sans-serif;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px #4a90e2;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: auto 1fr; /* กำหนดให้ label กับ textarea เป็นสองคอลัมน์ */
+    align-items: center; 
+}
+
+.form-group label {
+    margin-right: 10px;
+    text-align: start; /* จัดข้อความให้อยู่ด้านขวา */
+}
+
+.form-group textarea {
+    margin-left: 22px;
+    width: 84%; /* ให้ textarea กว้างเต็มพื้นที่ */
+    padding: 10px;
+    padding-left: 16px;
+    border: 1px solid #c2c2c2;
+    border-radius: 6px;
+    background-color: rgb(235, 235, 235);
+    transition: box-shadow 0.3s ease;
+    min-height: 100px;
+    resize: vertical;
+    color: rgb(88, 88, 88);
+    font-family: 'Kanit', sans-serif;
+}
+
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px #4a90e2;
+} 
+
+/* สไตล์สำหรับปุ่มปิด */
+.modal-close {
+    float: right;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 23px;
+    margin-left: 31px;
+}
+
+.switch label {
+    margin-left: 31px !important;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 6px;
+    left: 0;
+    right: 14px;
+    bottom: 0;
+    background-color: #ffffff;
+    transition: .4s;
+    border-radius: 34px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background: linear-gradient(to bottom, rgb(107, 105, 105) 50%, rgb(90, 89, 89) 50%);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background: linear-gradient(to bottom, #4cd964 50%, #2ed158 50%);
+}
+
+input:checked+.slider:before {
+    transform: translateX(19px);
+}
+
+
+.icon-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin: 0 1px;
+    color: #0066cc;
+    /* สีน้ำเงินเข้มสำหรับไอคอน */
+    transition: color 0.3s, transform 0.3s;
+}
+
+.icon-button:hover {
+    color: #004080;
+    /* สีเข้มขึ้นเมื่อ hover */
+    transform: scale(1.1);
+    /* ขยายขนาดเล็กน้อยเมื่อ hover */
+}
+
+.icon-button:active {
+    color: #003366;
+    /* สีเข้มขึ้นอีกเมื่อกดปุ่ม */
+    transform: scale(0.9);
+    /* ย่อขนาดเล็กน้อยเมื่อกดปุ่ม */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* จัดวางปุ่มให้อยู่ตรงกลางแนวนอน */
+    margin-top: 20px;
+}
+
+.close-button {
+    text-align: center;
+    padding: 8px;
+    border-radius: 8px;
+    border: 0px solid #7c4c4c;
+    background-color: #327db3;
+    color: white;
+    border: 0px;
+    font-weight: normal;
+    padding-inline: 35px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.close-button:hover {
+    background-color: #4a90e2; /* เปลี่ยนสีพื้นหลัง */
+    transform: scale(1.05); /* ขยายขนาดปุ่มเล็กน้อย */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+}
